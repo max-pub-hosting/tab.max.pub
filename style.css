@@ -1,0 +1,6 @@
+html{font-size: 20px;}
+*{font-family: Helvetica; font-weight: 300;}
+a{display: block; color: #333; text-decoration: none; margin: 5px;}
+a:hover{color: cornflowerblue;}
+main{width: 12cm; margin: 0 auto;}
+b{color: cornflowerblue;font-weight: 500; padding: 0 4px;}

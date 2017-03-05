@@ -1,5 +1,6 @@
-prettify = function(chords) {
+TabMD = (chords) => {
 	if (!chords) return;
+	console.log('chords', chords);
 	var lines = chords.split("\n");
 	var chords = Object.keys(ChordDefinitions);
 	var result = '';
@@ -29,6 +30,7 @@ prettify = function(chords) {
 // if (line.split(' ').length < line.length * 0.5) continue;
 // if (!lines[i + 1])
 
+module.exports.TabMD = TabMD;
 
 
 ChordDefinitions = {
