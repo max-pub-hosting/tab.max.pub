@@ -9,6 +9,7 @@ safeString = str => str.split(' ').join('').split("'").join('');
 
 artistList = () => {
 	let HTML = utf + baseStyle('') + `<main>`;
+	HTML += `<h1>Artists</h1>`;
 	fs.readdirSync(baseDir).forEach(item => {
 		if (item.includes('.')) return;
 		HTML += `<a href='${safeString(item)}'>${item}</a>`;
@@ -37,7 +38,7 @@ songList = (artist) => {
 song = (artist, song) => {
 	let HTML = utf + baseStyle('../../') + `<main>`;
 	HTML += `<h1>${song}</h1>`;
-	HTML += `<h2>${artist}</h2>`;
+	HTML += `<h2><a href='../'>${artist}</a></h2>`;
 	let dir = artist + '/' + song;
 	fs.readdirSync(baseDir + dir).forEach(item => {
 		HTML += TabMD.TabMD(fs.readFileSync(baseDir + dir + '/' + item, 'utf-8'));

@@ -1,6 +1,7 @@
 html{font-size: 20px;}
+body{background: #333;margin:0;}
 *{font-family: Helvetica; font-weight: 300;}
 a{display: block; color: #333; text-decoration: none; margin: 5px;}
 a:hover{color: cornflowerblue;}
-main{width: 12cm; margin: 0 auto;}
+main{width: 17cm; margin: 0 auto; background: white; padding: 1cm; min-height: 100%;}
 b{color: cornflowerblue;font-weight: 500; padding: 0 4px;}
