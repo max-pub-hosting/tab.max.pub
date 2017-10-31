@@ -1,6 +1,6 @@
 html{font-size: 20px;}
-body{background: #333;margin:0;}
-*{font-family: Helvetica; font-weight: 300;}
+body{background: white;margin:0;}
+*{font-family: "Helvetica Neue"; font-weight: 300;}
 a{display: block; color: #333; text-decoration: none; margin: 5px;}
 a:hover{color: cornflowerblue;}
 main{width: 17cm; margin: 0 auto; background: white; padding: 1cm; min-height: 100%;}
