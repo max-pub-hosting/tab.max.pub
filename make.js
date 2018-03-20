@@ -16,11 +16,16 @@ artistList = () => {
 		songList(item);
 	});
 	HTML += `</main>`;
+	// console.log(HTML);
 	fs.writeFileSync('index.html', HTML);
 }
 
 
 songList = (artist) => {
+	console.log('make',artist);
+	try {
+		fs.mkdirSync(safeString(artist));
+	} catch (e) {}
 	let HTML = utf + baseStyle('../') + `<main>`;
 	HTML += `<h1>${artist}</h1>`;
 	fs.readdirSync(baseDir + artist).forEach(item => {
@@ -29,9 +34,6 @@ songList = (artist) => {
 		song(artist, item);
 	});
 	HTML += `</main>`;
-	try {
-		fs.mkdirSync(safeString(artist));
-	} catch (e) {}
 	fs.writeFileSync(safeString(artist) + '/index.html', HTML);
 }
 

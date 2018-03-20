@@ -1,6 +1,6 @@
 TabMD = (chords) => {
 	if (!chords) return;
-	console.log('chords', chords);
+	// console.log('chords', chords);
 	var lines = chords.split("\n");
 	var chords = Object.keys(ChordDefinitions);
 	var result = '';
