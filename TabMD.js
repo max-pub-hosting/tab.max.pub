@@ -1,10 +1,22 @@
-TabMD = (chords) => {
+export function TabMD(chords) {
 	if (!chords) return;
 	// console.log('chords', chords);
 	var lines = chords.split("\n");
+	// let links = lines.filter(x=>x.includes('spotify.com'))
 	var chords = Object.keys(ChordDefinitions);
 	var result = '';
 	for (var i = 0; i < lines.length; i++) {
+		if (lines[i].includes('spotify.com')) {
+			let url = new URL(lines[i].trim())
+			let id = url.pathname.replace('/track/','')
+			result += `<iframe width="100%" height="52" src="https://embed.odesli.co/?url=spotify:track:${id}&theme=light" frameborder="0" allowtransparency allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox"></iframe>`
+			continue
+		}
+		if(lines[i].trim().startsWith('[')){
+			let head = lines[i].trim().replace('[','').replace(']','')
+			result += `<h5>${head}</h5>\n`
+			continue
+		}
 		var line = lines[i].split("\t").join('    ');
 		var emptyLine = !line.trim();
 		var halfSpaces = line.split(' ').length >= line.length * 0.5;
@@ -21,7 +33,7 @@ TabMD = (chords) => {
 				} //+ lineChords[j].length - 1
 			continue;
 		}
-		result += line + "<br/>";
+		result += line + "<br/>\n";
 	}
 	return result;
 }
@@ -30,10 +42,10 @@ TabMD = (chords) => {
 // if (line.split(' ').length < line.length * 0.5) continue;
 // if (!lines[i + 1])
 
-module.exports.TabMD = TabMD;
+// module.exports.TabMD = TabMD;
 
 
-ChordDefinitions = {
+const ChordDefinitions = {
 	'C': '- 3 2 0 1 0',
 	'D': '- - 0 3 2 3',
 	'E': '0 2 2 1 0 0',
@@ -67,5 +79,5 @@ ChordDefinitions = {
 	'Hm': '3 2 0 0 0 3',
 };
 
-GuitarOrder = 'E,A,D,G,H,E'.split(',');
-PianoOrder = "C,C#,D,D#,E,F,F#,G,G#,A,A#,H".split(',');
+const GuitarOrder = 'E,A,D,G,H,E'.split(',');
+const PianoOrder = "C,C#,D,D#,E,F,F#,G,G#,A,A#,H".split(',');
