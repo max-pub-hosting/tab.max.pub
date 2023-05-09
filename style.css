@@ -7,7 +7,7 @@ a:hover{color: cornflowerblue;}
 main{width: 17cm; margin: 0 auto; background: white; padding: 1cm; min-height: 100%;}
 b{color: cornflowerblue;font-weight: 500; padding: 0 4px;}
 h5{margin:0;padding:0}
-.songlink{display: inline-block;}
-.songlink img{height:30px; display: inline-block;}
-.youtube img{height:25px;}
+/* .songlink{display: inline-block;} */
+.songlink img{width:120px; display: inline-block; padding: 10px;}
+/* .youtube img{width:120px;} */
 .count{text-align: right; color: gray;}
